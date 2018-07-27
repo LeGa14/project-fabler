@@ -28,12 +28,6 @@ ActiveRecord::Schema.define(version: 2018_07_27_142322) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "charcters", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "props", force: :cascade do |t|
     t.string "name"
     t.string "image_url"

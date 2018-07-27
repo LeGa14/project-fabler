@@ -30,7 +30,7 @@ mountain = Setting.create({
 item = Prop.create({
     name: "just an item",
     image_url: "https://nothingaboutscotthere.files.wordpress.com/2014/12/money-suit.jpg",
-    character_id: user.id
+    character_id: user.id,
 })
 book = Prop.create({
     name: "book",
@@ -41,6 +41,17 @@ goat = Prop.create({
     name: "goat",
     image_url: "https://cdn2.vectorstock.com/i/thumb-large/50/36/goat-vector-3315036.jpg",
     setting_id: mountain.id
+})
+
+# Action seeds
+crawl = Action.create({
+    doing: "is crawling."
+})
+walk = Action.create({
+    doing: "is walking."
+})
+run = Action.create({
+    doing: "is running."
 })
 
 puts "Seeds ADDED!"

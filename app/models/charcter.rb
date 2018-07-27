@@ -1,0 +1,2 @@
+class Charcter < ApplicationRecord
+end

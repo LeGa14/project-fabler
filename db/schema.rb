@@ -10,42 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_27_142322) do
+ActiveRecord::Schema.define(version: 0) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "actions", force: :cascade do |t|
-    t.string "doing"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "characters", force: :cascade do |t|
-    t.string "name"
-    t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "props", force: :cascade do |t|
-    t.string "name"
-    t.string "image_url"
-    t.bigint "setting_id"
-    t.bigint "character_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["character_id"], name: "index_props_on_character_id"
-    t.index ["setting_id"], name: "index_props_on_setting_id"
-  end
-
-  create_table "settings", force: :cascade do |t|
-    t.string "name"
-    t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "props", "characters"
-  add_foreign_key "props", "settings"
 end

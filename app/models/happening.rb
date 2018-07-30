@@ -1,0 +1,2 @@
+class Happening < Event
+end

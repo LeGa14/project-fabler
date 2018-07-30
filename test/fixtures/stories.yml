@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  type: 
+  scenario: one
+  existent: one
+  event: one
+  setting: one
+  character: one
+  prop: one
+
+two:
+  title: MyString
+  type: 
+  scenario: two
+  existent: two
+  event: two
+  setting: two
+  character: two
+  prop: two

@@ -1,0 +1,2 @@
+class Prop < Existent
+end

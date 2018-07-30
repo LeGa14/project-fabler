@@ -3,4 +3,5 @@ class Scenario < ApplicationRecord
     has_many :existents, dependent: :destroy
     has_many :events, dependent: :destroy
     has_many :happenings, dependent: :destroy
+    belongs_to :stories
 end

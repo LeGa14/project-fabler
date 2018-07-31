@@ -1,3 +1,3 @@
 class Event < ApplicationRecord
-    # belong_to :scenario, dependent: :destroy
+    belongs_to :scenario, dependent: :destroy, optional: true
 end

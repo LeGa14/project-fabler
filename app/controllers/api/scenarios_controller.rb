@@ -5,7 +5,7 @@ class Api::ScenariosController < ApplicationController
       end
     
       def show
-        @scenario = Post.find(params[:id])
+        @scenario = Scenario.find(params[:id])
         render json: @scenario
       end
     
@@ -16,7 +16,7 @@ class Api::ScenariosController < ApplicationController
       end
     
       def update
-        @scenario = Post.find(params[:id])
+        @scenario = Scenario.find(params[:id])
         @scenario.update!(scenario_params)
         render json: @scenario
       end

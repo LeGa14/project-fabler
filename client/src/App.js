@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
+import NavBar from './components/NavBar'
+import Footer from './components/Footer'
+import AppContent from './components/AppContent'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Welcome to Project Fabler</h1>
+        <NavBar />
+        <AppContent />
+        <Footer />
       </div>
     );
   }

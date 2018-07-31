@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
+import styled from 'styled-components'
+
+const FooterStyle = styled.div`
+.Footer {
+    width: 100vw;
+    color: green;
+}
+.FooterContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+`
 
 class Footer extends Component {
     render() {
         return (
-            <div className="top3 Footer">
-                <h2>This will be where the Footer is, Hello!</h2>
-            </div>
+            <FooterStyle className="top3 Footer">
+                <div className="FooterContent">
+                    <h2>This will be where the Footer is, Hello!</h2>
+                </div>
+            </FooterStyle>
         );
     }
 }

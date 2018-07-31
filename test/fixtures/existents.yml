@@ -3,7 +3,11 @@
 one:
   name: MyString
   image_url: MyString
+  subject_type: MyString
+  scenario: one
 
 two:
   name: MyString
   image_url: MyString
+  subject_type: MyString
+  scenario: two

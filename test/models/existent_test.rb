@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PropTest < ActiveSupport::TestCase
+class ExistentTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

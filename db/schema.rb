@@ -10,42 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_27_142322) do
+ActiveRecord::Schema.define(version: 2018_07_31_140036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "actions", force: :cascade do |t|
-    t.string "doing"
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.string "subject"
+    t.string "action"
+    t.string "object"
+    t.string "event_type"
+    t.bigint "scenario_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["scenario_id"], name: "index_events_on_scenario_id"
   end
 
-  create_table "characters", force: :cascade do |t|
+  create_table "existents", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
+    t.string "subject_type"
+    t.bigint "scenario_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["scenario_id"], name: "index_existents_on_scenario_id"
+  end
+
+  create_table "scenarios", force: :cascade do |t|
+    t.string "title"
+    t.bigint "story_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["story_id"], name: "index_scenarios_on_story_id"
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.string "title"
+    t.string "story_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "props", force: :cascade do |t|
-    t.string "name"
-    t.string "image_url"
-    t.bigint "setting_id"
-    t.bigint "character_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["character_id"], name: "index_props_on_character_id"
-    t.index ["setting_id"], name: "index_props_on_setting_id"
-  end
-
-  create_table "settings", force: :cascade do |t|
-    t.string "name"
-    t.string "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "props", "characters"
-  add_foreign_key "props", "settings"
+  add_foreign_key "events", "scenarios"
+  add_foreign_key "existents", "scenarios"
+  add_foreign_key "scenarios", "stories"
 end

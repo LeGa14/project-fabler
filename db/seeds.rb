@@ -74,13 +74,18 @@ run = Event.create({
     action: "run away"
 })
 
+happening = Happening.create({
+    title: "Something's Happening",
+    subject: "Somebody or Something",
+    action: "are doing things"
+})
+
 # Scenario seeds
 scenarioOne = Scenario.create({
     title: "Scenario One",
     event_id: event.id,
     existent_id: tesla.id
 })
-
 # Story seeds
 story = Story.create({
     title: "A Story",
@@ -89,6 +94,7 @@ story = Story.create({
     existent_id: scenarioOne.existent_id,
     event_id: scenarioOne.event_id
 })
+
 
 
 puts "Seeds ADDED!"

@@ -1,59 +1,61 @@
 Rails.application.routes.draw do
 
-  # props routes thru settings
   namespace :api do
-    namespace :settings do
-      get 'props/index'
-      get 'props/show'
-      post 'props/create'
-      patch 'props/update'
-      delete 'props/destroy'
-    end
-  end
-# props routes thru chars
-  namespace :api do
-    namespace :characters do
-      get 'props/index'
-      get 'props/show'
-      post 'props/create'
-      patch 'props/update'
-      delete 'props/destroy'
+    namespace :stories do
+      namespace :scenarios do
+        get 'existents/index'
+        get 'existents/show'
+        post 'existents/create'
+        patch 'existents/update'
+        delete 'existents/destroy'
+      end
     end
   end
 
   namespace :api do
-    get 'settings/index'
-    get 'settings/show'
-    post 'settings/create'
-    patch 'settings/update'
-    delete 'settings/destroy'
+    namespace :stories do
+      namespace :scenarios do
+        get 'events/index'
+        get 'events/show'
+        post 'events/create'
+        patch 'events/update'
+        delete 'events/destroy'
+      end
+    end
   end
 
   namespace :api do
-    get 'characters/index'
-    get 'characters/show'
-    post 'characters/create'
-    patch 'characters/update'
-    delete 'characters/destroy'
+    namespace :stories do
+      get 'scenarios/index'
+      get 'scenarios/show'
+      post 'scenarios/create'
+      patch 'scenarios/update'
+      delete 'scenarios/destroy'
+    end
   end
 
   namespace :api do
-    get 'actions/index'
-    get 'actions/show'
-    post 'actions/create'
-    patch 'actions/update'
-    delete 'actions/destroy'
+    get 'stories/index'
+    get 'stories/show'
+    post 'stories/create'
+    patch 'stories/update'
+    delete 'stories/destroy'
   end
   
+
   namespace :api do
-    resources :characters do
-      resources :props
+    resources :stories do
+      resources :scenarios do
+        resources :existents
+      end
     end
   end
 
   namespace :api do
-    resources :settings do
-      resources :props
+    resources :stories do
+      resources :scenarios do
+        resources :events
+      end
     end
   end
 

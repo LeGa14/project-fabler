@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   namespace :api do
-    namespace :stories do
       namespace :scenarios do
         get 'existents/index'
         get 'existents/show'
@@ -9,18 +8,15 @@ Rails.application.routes.draw do
         patch 'existents/update'
         delete 'existents/destroy'
       end
-    end
   end
 
   namespace :api do
-    namespace :stories do
       namespace :scenarios do
         get 'events/index'
         get 'events/show'
         post 'events/create'
         patch 'events/update'
         delete 'events/destroy'
-      end
     end
   end
 

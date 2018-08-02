@@ -6,6 +6,15 @@ story = Story.create({
     story_type: "Example"
 })
 
+storyOne = Story.create({
+    title: "An Empty Story",
+    story_type: "Example"
+})
+storyTwo = Story.create({
+    title: "A Second Empty Story",
+    story_type: "Example"
+})
+
 # Scenario seeds
 scenarioOne = Scenario.create({
     title: "Scenario Example One",

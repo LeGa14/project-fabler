@@ -19,7 +19,7 @@ class Footer extends Component {
         return (
             <FooterStyle className="top3 Footer">
                 <div className="FooterContent">
-                    <h2>This will be where the Footer is, Hello!</h2>
+                    <h2>The Footer!</h2>
                 </div>
             </FooterStyle>
         );

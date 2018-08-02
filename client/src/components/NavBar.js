@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 const NavBarStyle = styled.div`
 .NavBar {
-    width: 100vw;
+    background-position: left;    
+    max-width: 100%;
     color: red;
 }
 .NavBarContent {
@@ -21,7 +22,7 @@ class NavBar extends Component {
                 <div className="top3 NavBar">
                     <div className="NavBarContent">
                         <h4>Nav</h4>
-                        <h2>Fabler</h2>
+                            <h2>Fabler</h2>
                         <h4>Link to HOME</h4>
                     </div>
                 </div>

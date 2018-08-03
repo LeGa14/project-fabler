@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import styled from 'styled-components'
+import Anime from 'react-anime'
 
 const NavBarStyle = styled.div`
 .NavBar {
@@ -31,4 +32,4 @@ class NavBar extends Component {
     }
 }
 
-export default NavBar;
+export default NavBar

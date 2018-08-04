@@ -30,7 +30,7 @@ class NewStoryForm extends Component {
             <div>
                 <h4>New Story Form</h4>
 
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className='StoryForm'>
                     <label for="title">Title: </label>
                     <input 
                         type='text'

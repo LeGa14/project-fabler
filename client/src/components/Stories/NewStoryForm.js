@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 class NewStoryForm extends Component {
     state = {
@@ -15,11 +16,10 @@ class NewStoryForm extends Component {
     }
 
     handleSubmit = (event) => {
-        const city_id = this.props.match.params.city_id
         event.preventDefault()
-        axios.post(`/api/cities/${this.props.match.params.city_id}/posts`, this.state)
+        axios.post(`/api/stories`, this.state)
             .then((res) => {
-                this.props.history.push(`/cities/${city_id}`)
+                this.props.history.push(`/stories/`)
             }).catch((err) => {
                 console.error(err)
             })
@@ -28,13 +28,26 @@ class NewStoryForm extends Component {
     render() {
         return (
             <div>
-                <h4>New Post Form</h4>
+                <h4>New Story Form</h4>
 
                 <form onSubmit={this.handleSubmit}>
                     <label for="title">Title: </label>
                     <input 
                         type='text'
                         name='title'
+                        value={this.state.title}
+                        onChange={(event) => this.handleChange(event)} 
+                    />
+                    <label for="story_type">Story Type (separate genres using commas): </label>
+                    <input 
+                        type='text'
+                        name='story_type'
+                        value={this.state.story_type}
+                        onChange={(event) => this.handleChange(event)} 
+                    />
+                    <button
+                        type='submit'
+                        value='story' >Add New Story</button>
                         
                 </form>
             </div>

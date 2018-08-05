@@ -1,11 +1,27 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 
-class NewStoryForm extends Component {
+class EditStoryForm extends Component {
     state = {
         title: '',
         story_type: ''
     }
+
+    componentDidMount() {
+        this.fetchStory
+    }
+    fetchStory = () => {
+        const storyId = this.props.match.params.story_id
+        axios.get(`/api/cities/${storyId}`)
+          .then((res) => {
+            this.setState({
+              title: res.data.title,
+              body: res.data.body
+            })
+          }).catch((err) => {
+            console.error(err)
+          })
+      }
 
     handleChange = (event) => {
         const inputToTarget = event.target.name
@@ -16,8 +32,9 @@ class NewStoryForm extends Component {
     }
 
     handleSubmit = (event) => {
+        const story_id = this.props.match.params.story_id
         event.preventDefault()
-        axios.post(`/api/stories`, this.state)
+        axios.patch(`/api/stories/${story_id}`, this.state)
             .then((res) => {
                 this.props.history.push(`/`)
             }).catch((err) => {
@@ -28,7 +45,7 @@ class NewStoryForm extends Component {
     render() {
         return (
             <div>
-                <h4>New Story Form</h4>
+                <h4>Edit Story Form</h4>
 
                 <form onSubmit={this.handleSubmit} className='StoryForm'>
                     <label for="title">Title: </label>
@@ -55,4 +72,4 @@ class NewStoryForm extends Component {
     }
 }
 
-export default NewStoryForm;
+export default EditStoryForm;

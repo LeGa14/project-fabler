@@ -41,7 +41,8 @@ class StoryIndex extends Component {
         const storyList = this.state.stories.map((story) => {
             return (
                 <div className="SingleStory">
-                    <Link to={`/stories/${story.id}`}>{story.title}</Link>
+                    <Link to={`/stories/${story.id}`}>{story.title}</Link> | 
+                    <Link to={`/stories/${story.id}/edit`}>(Edit Me)</Link>
                 </div>
             )
         })

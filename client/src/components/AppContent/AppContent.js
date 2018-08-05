@@ -8,6 +8,7 @@ import StoryIndex from '../Stories/StoryIndex'
 import StoryShow from '../Stories/StoryShow'
 import ScenarioShow from '../Stories/ScenarioShow'
 import NewStoryForm from '../Stories/NewStoryForm'
+import EditStoryForm from '../Stories/EditStoryForm'
 
 const AppContentStyle = styled.div`
 .AppContent {
@@ -26,6 +27,7 @@ class AppContent extends Component {
                     <Route exact path='/' component={StoryIndex} />
                     <Route exact path='/stories/new' component={NewStoryForm} />
                     <Route exact path='/stories/:story_id' component={StoryShow} />
+                    <Route exact path='/stories/:story_id/edit' component={EditStoryForm} />
                     <Route exact path='/stories/:story_id/scenarios/:scenario_id' component={ScenarioShow} />
                     <Route exact path='/stories/:story_id/posts/new' component={NonFiller} />
                     <Route exact path='/stories/:story_id/posts/:post_id/edit' component={NonFiller} />

@@ -38,7 +38,8 @@ body, html {
 }
 h1, h2, h3, h4, h5, h6 {
   color: white;
-  text-size: 25em;
+  font-size: 2.5em;
+  margin: 1%;
   text-shadow:
    -.03em -.03em 0 #000,  
     .03em -.03em 0 #000,
@@ -50,6 +51,7 @@ a:hover{
   color: rgba(255, 255, 0, 0.55);
 }
 a {
+  font-size: 2em;
   color: #00a1FF;
   text-shadow:
    -0.03em -0.03em 0 rgba(0, 0, 255, 0.5),  

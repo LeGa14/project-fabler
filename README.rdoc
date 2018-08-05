@@ -30,26 +30,12 @@ https://trello.com/b/VXGz87iO/project-4-story-maker
 ==Wireframes
 Here are 7 wireframes for FootUp intended for use on a mobile phone. They are quite detailed, have a lot of wishful features, and many are not included on the app.  They may be added in the future!
 ====Registration
-http://i.imgur.com/jrW73JS.png
-====Profile Setup
-http://i.imgur.com/AkoMFU3.png
-====Game Feed
-http://i.imgur.com/SdgNIbU.png
-====Create Game
-http://i.imgur.com/ETTZJaP.png
-====Create Game by Location
-http://i.imgur.com/43D3siC.png
-====Game Details
-http://i.imgur.com/wAfdPpx.png
-====Public Profile Pages
-http://i.imgur.com/by8Nbpe.png
-====Invitations
-http://i.imgur.com/oGlrksR.png
+rdoc-image:/wireframes/1c313868705087.5b66a02d6c995.jpg
 
 ==ERD Diagram / Model Associations
 In this project I only had two models with a `has_and_belongs_to_many` or a many-to-many
 relationship.
-http://i.imgur.com/ZwDlsIy.png
+rdoc-image:pdftoimage/2018-07-29 12-44 page 1-1.jpg
 
 ==Future Features
 Many future features are included in the wireframes, but next few would be:

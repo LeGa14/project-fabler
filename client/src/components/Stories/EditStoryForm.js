@@ -8,20 +8,20 @@ class EditStoryForm extends Component {
     }
 
     componentDidMount() {
-        this.fetchStory
+        this.fetchStory()
     }
-    fetchStory = () => {
-        const storyId = this.props.match.params.story_id
-        axios.get(`/api/cities/${storyId}`)
-          .then((res) => {
-            this.setState({
-              title: res.data.title,
-              body: res.data.body
+    fetchStory = async () => {
+        try {
+            const storyId = this.props.match.params.story_id
+            let storyResponse = await axios.get(`/api/stories/${storyId}`)
+            this.setState({   
+                title: storyResponse.data.title,
+                story_type: storyResponse.data.story_type
             })
-          }).catch((err) => {
+        } catch (err) {
             console.error(err)
-          })
-      }
+        }
+    }
 
     handleChange = (event) => {
         const inputToTarget = event.target.name
@@ -45,7 +45,7 @@ class EditStoryForm extends Component {
     render() {
         return (
             <div>
-                <h4>Edit Story Form</h4>
+                <h4>Editing Story... "{this.state.title}"</h4>
 
                 <form onSubmit={this.handleSubmit} className='StoryForm'>
                     <label for="title">Title: </label>
@@ -53,6 +53,7 @@ class EditStoryForm extends Component {
                         type='text'
                         name='title'
                         value={this.state.title}
+                        placeholder={this.state.title}
                         onChange={(event) => this.handleChange(event)} 
                     />
                     <label for="story_type">Story Type (separate genres using commas): </label>
@@ -60,6 +61,7 @@ class EditStoryForm extends Component {
                         type='text'
                         name='story_type'
                         value={this.state.story_type}
+                        placeholder={this.state.title}
                         onChange={(event) => this.handleChange(event)} 
                     />
                     <button

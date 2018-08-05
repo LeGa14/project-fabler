@@ -28,11 +28,13 @@ class StoryShow extends Component {
     }
 
     postDelete = async (id) => {
-        await axios.delete(`/api/stories/${this.state.story.id}/scenarios/${id}`)
-        const setNewState = await axios.get(`/api/stories/${this.state.story.id}/scenarios`)
-        this.setState({
-            scenarios: setNewState.data
-        })
+        await axios.delete(`/api/stories/${this.state.story.id}`)
+        const setNewState = await axios.get(`/api/stories`)
+        // this.setState({
+        //     story: setNewState.data
+        // })
+        this.props.history.push(`/`)
+        
     }
     render() {
 
@@ -47,7 +49,10 @@ class StoryShow extends Component {
         return (
             <div>
                 <h1>{this.state.story.title}</h1>
-                <div>
+                <div className='ScenarioList'>
+                    <button
+                        onClick={() => this.postDelete(this.state.story.id)}> Delete {this.state.story.title}
+                        </button>
                     <h2>Scenarios</h2>
                     {scenarioList}
                     <hr />
